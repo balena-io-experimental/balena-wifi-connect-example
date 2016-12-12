@@ -1,0 +1,30 @@
+# Base-image for python on any machine using a template variable
+FROM resin/%%RESIN_MACHINE_NAME%%-python:2.7
+
+# Set the maintainer
+MAINTAINER Joe Roberts <joe@resin.io>
+
+# Enable systemd init system
+ENV INITSYSTEM on
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Use apt-get to install dependencies
+RUN apt-get update && apt-get install -yq --no-install-recommends \
+    python-dev \
+    python-smbus \
+    python-psutil && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Upgrade pip
+RUN pip install --upgrade pip
+
+# Install dot3k library
+RUN pip install dot3k
+
+# Copy everything
+COPY . ./
+
+# Start application
+CMD ["bash", "start.sh"]
