@@ -12,9 +12,12 @@ WORKDIR /usr/src/app
 
 # We have split up the resin-wifi-connect and Display-O-Tron HAT configuration to make clear
 # the different parts needed. In your dockerfile you should combine these steps to reduce
-# the number of layers. 
+# the number of layers.
 
 # -- Start of resin-wifi-connect section -- #
+
+# Set the device type environment variable using Dockerfile templates
+ENV DEVICE_TYPE=%%RESIN_MACHINE_NAME%%
 
 # Use apt-get to install dependencies
 RUN apt-get update && apt-get install -yq --no-install-recommends \
