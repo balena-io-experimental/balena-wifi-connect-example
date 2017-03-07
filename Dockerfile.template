@@ -40,8 +40,7 @@ RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-a
     rm -rf /tmp/*
 
 # Install resin-wifi-connect
-ENV RESIN_WIFI_CONNECT_VERSION v2.0.1
-RUN git clone --branch $RESIN_WIFI_CONNECT_VERSION --depth 1 https://github.com/resin-io/resin-wifi-connect.git && \
+RUN git clone https://github.com/resin-io/resin-wifi-connect.git && \
     cd resin-wifi-connect && \
     JOBS=MAX npm install --unsafe-perm --production && \
     npm cache clean && \
