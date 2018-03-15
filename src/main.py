@@ -20,11 +20,9 @@ def main():
 
 @touch.on(touch.BUTTON)
 def handle_button(ch, evt):
-    # When the button is pressed resin-wifi-connect is started with `--clear'
-    # flag set to 'true'. This forces resin-wifi-connect to remove any
-    # previously configured WiFi connections.
+    # When the button is pressed WiFi Connect is started.
     print("Button pressed")
-    subprocess.call(["resin-wifi-connect", "--clear=true"])
+    subprocess.call(["wifi-connect"])
 
 
 if __name__ == "__main__":
