@@ -1,9 +1,9 @@
 balena-wifi-connect-example
 ==========================
 
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/balena-projects/balena-wifi-connect-example/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/balena-io-projects/balena-wifi-connect-example/blob/master/LICENSE)
 
-> Example application to demonstrate [balena-wifi-connect](https://github.com/resin-io/resin-wifi-connect)
+> Example application to demonstrate [wifi-connect](https://github.com/balena-io/wifi-connect)
 
 This example is written in python, consisting of an RPi3 and a [Display-O-Tron HAT](https://shop.pimoroni.com/products/display-o-tron-hat) to provide visual feedback. 
 
